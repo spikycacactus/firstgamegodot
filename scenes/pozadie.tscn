@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnsxjfpid227i"]
+
+[ext_resource type="Script" path="res://scripts/pozadie.gd" id="1_uoe0c"]
+[ext_resource type="Script" path="res://scripts/dzindzik.gd" id="2_cstfs"]
+[ext_resource type="Texture2D" uid="uid://bdo1rhmed0156" path="res://assets/Untitled_Artwork.png" id="3_t7hnd"]
+[ext_resource type="Script" path="res://scripts/fazuľka.gd" id="4_2fdrw"]
+[ext_resource type="Texture2D" uid="uid://bx7gbnp4vdfia" path="res://assets/IMG_0161.PNG" id="5_t7hnd"]
+[ext_resource type="Texture2D" uid="uid://ci0ftjbbqti06" path="res://assets/IMG_0160.PNG" id="7_di2dr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqo77"]
+size = Vector2(179, 657)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h4pq"]
+size = Vector2(532, 229)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uoe0c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.17, 0.17)
+
+[node name="dzindzik" type="CharacterBody2D" parent="."]
+script = ExtResource("2_cstfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="dzindzik"]
+z_index = 2
+position = Vector2(-1.19209e-06, 0)
+scale = Vector2(1.024, 1)
+texture = ExtResource("3_t7hnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dzindzik"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_oqo77")
+
+[node name="fazuľka" type="Area2D" parent="."]
+position = Vector2(-1, 1)
+script = ExtResource("4_2fdrw")
+
+[node name="Sprite2D" type="Sprite2D" parent="fazuľka"]
+z_index = 1
+position = Vector2(1, 0)
+texture = ExtResource("5_t7hnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fazuľka"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_4h4pq")
+
+[node name="Timer" type="Timer" parent="fazuľka"]
+
+[node name="dizajn nad fazuľkou" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(1.04899, 0.980342)
+
+[node name="plocha" type="Sprite2D" parent="."]
+texture = ExtResource("7_di2dr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -463.0
+offset_top = -971.0
+offset_right = -96.0
+offset_bottom = -629.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 250
+
+[connection signal="body_entered" from="fazuľka" to="fazuľka" method="_on_body_entered"]
+[connection signal="body_exited" from="fazuľka" to="fazuľka" method="_on_body_exited"]
+[connection signal="timeout" from="fazuľka/Timer" to="fazuľka" method="_on_timer_timeout"]
