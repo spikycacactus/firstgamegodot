@@ -1,7 +1,7 @@
 extends Area2D
 
 #hodnoty na pohyb
-var speed = 10
+var speed = 2250
 var left_limit = -2970
 var right_limit = 2970
 var direction = Vector2.RIGHT

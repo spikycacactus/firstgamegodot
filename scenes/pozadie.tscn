@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dnsxjfpid227i"]
 
-[ext_resource type="Script" path="res://scripts/pozadie.gd" id="1_uoe0c"]
-[ext_resource type="Script" path="res://scripts/dzindzik.gd" id="2_cstfs"]
+[ext_resource type="Script" uid="uid://bhqc21iday0d3" path="res://scripts/pozadie.gd" id="1_uoe0c"]
+[ext_resource type="Script" uid="uid://cl3xxbgi5gbbh" path="res://scripts/dzindzik.gd" id="2_cstfs"]
 [ext_resource type="Texture2D" uid="uid://bdo1rhmed0156" path="res://assets/Untitled_Artwork.png" id="3_t7hnd"]
-[ext_resource type="Script" path="res://scripts/fazuľka.gd" id="4_2fdrw"]
+[ext_resource type="Script" uid="uid://bsc5sdff1sjko" path="res://scripts/fazuľka.gd" id="4_2fdrw"]
 [ext_resource type="Texture2D" uid="uid://bx7gbnp4vdfia" path="res://assets/IMG_0161.PNG" id="5_t7hnd"]
 [ext_resource type="Texture2D" uid="uid://ci0ftjbbqti06" path="res://assets/IMG_0160.PNG" id="7_di2dr"]
 
